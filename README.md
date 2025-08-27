@@ -1,40 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Next.js TabBar 应用
 
-## Getting Started
+这是一个使用 Next.js 构建的移动端风格应用，包含底部 TabBar 导航。
 
-First, run the development server:
+## 功能特性
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 🏠 底部 TabBar 导航
+- **首页** (`/`) - 应用主页，包含搜索栏、轮播图、功能卡片
+- **服务** (`/service`) - 服务页面，展示各种服务项目
+- **消息** (`/message`) - 消息中心，显示系统通知和消息列表
+- **我的** (`/profile`) - 个人中心，用户信息和设置菜单
+
+### 📱 移动端优化
+- 响应式设计，适配各种屏幕尺寸
+- 触摸友好的交互体验
+- 平滑的页面切换动画
+- 现代化的 UI 设计
+
+### 🎨 设计特色
+- 统一的视觉风格和色彩系统
+- 卡片式布局设计
+- 渐变背景和阴影效果
+- 清晰的图标和排版
+
+## 项目结构
+
+```
+my-app/
+├── components/
+│   ├── TabBar.js          # 底部导航栏组件
+│   ├── TabBar.module.css  # TabBar 样式
+│   └── Layout.js          # 布局组件
+├── pages/
+│   ├── index.js           # 首页
+│   ├── service.js         # 服务页面
+│   ├── message.js         # 消息页面
+│   ├── profile.js         # 个人中心
+│   ├── _app.js            # 应用入口
+│   └── posts/
+│       └── first-post.js  # 示例文章页面
+├── styles/
+│   └── globals.css        # 全局样式
+└── public/               # 静态资源
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 开始使用
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### 安装依赖
+```bash
+npm install
+# 或
+yarn install
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### 启动开发服务器
+```bash
+npm run dev
+# 或
+yarn dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+打开 [http://localhost:3000](http://localhost:3000) 查看应用。
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 构建生产版本
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 技术栈
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js 15** - React 框架
+- **React 18** - UI 库
+- **CSS Modules** - 样式解决方案
+- **Tailwind CSS** - CSS 框架
+- **响应式设计** - 移动端适配
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## 路由说明
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 主要页面路由
+- `/` - 首页（默认激活）
+- `/service` - 服务页面
+- `/message` - 消息页面
+- `/profile` - 个人中心页面
 
-## Deploy on Vercel
+### TabBar 导航
+TabBar 组件会自动根据当前路由高亮对应的选项卡，支持：
+- 点击切换页面
+- 路由状态同步
+- 视觉反馈效果
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 自定义开发
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+### 添加新页面
+1. 在 `pages/` 目录下创建新的页面文件
+2. 在 `TabBar.js` 中添加新的导航项
+3. 更新路由配置
+
+### 修改样式
+- 全局样式：编辑 `styles/globals.css`
+- TabBar 样式：编辑 `components/TabBar.module.css`
+- 页面样式：使用内联样式或 CSS Modules
+
+### 组件开发
+- 所有可复用组件放在 `components/` 目录
+- 使用 CSS Modules 进行样式隔离
+- 遵循 React 最佳实践
+
+## 浏览器支持
+
+- Chrome (最新版本)
+- Firefox (最新版本)
+- Safari (最新版本)
+- Edge (最新版本)
+- 移动端浏览器
+
+## 许可证
+
+MIT License
