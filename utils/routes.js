@@ -4,7 +4,8 @@ export const routes = {
   SERVICE: '/service',
   MESSAGE: '/message',
   PROFILE: '/profile',
-  FIRST_POST: '/posts/first-post'
+  FIRST_POST: '/posts/first-post',
+  YJL: '/YJL',
 };
 
 // TabBar 导航配置
