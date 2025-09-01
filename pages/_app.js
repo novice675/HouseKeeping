@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     // 页面路由变化时的处理逻辑
     const handleRouteChange = (url) => {
-      console.log('路由切换到:', url);
+      // 移除不必要的打印
     };
 
     router.events.on('routeChangeComplete', handleRouteChange);

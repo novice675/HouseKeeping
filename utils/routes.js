@@ -3,8 +3,7 @@ export const routes = {
   HOME: '/',
   SERVICE: '/service',
   MESSAGE: '/message',
-  PROFILE: '/profile',
-  FIRST_POST: '/posts/first-post'
+  PROFILE: '/profile'
 };
 
 // TabBar 导航配置
