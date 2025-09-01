@@ -11,7 +11,17 @@ export default function Message() {
   return (
     <div className={styles.pageContent}>
       <div style={{ padding: '20px' }}>
-        <h1>消息中心</h1>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <h1 style={{ fontSize: '24px', fontWeight: 'bold' }}>消息</h1>
+          <button style={{ backgroundColor: '#3b82f6', color: '#fff',
+             padding: '10px 20px', borderRadius: '5px', border: 'none', cursor: 'pointer' }}
+             onClick={() => {
+              window.location.href = '/YJL';
+             }}
+             >
+          客服对话
+          </button>
+        </div>
         <div style={{ marginTop: '20px' }}>
           {messages.map((message) => (
             <div key={message.id} style={{

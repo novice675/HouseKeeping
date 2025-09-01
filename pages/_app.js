@@ -1,3 +1,4 @@
+// 全局css样式
 import "@/styles/globals.css";
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';

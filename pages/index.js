@@ -1,11 +1,21 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import TabBar from '../components/TabBar';
+import PackageCard from '../components/PackageCard';
+import { usePackages } from '../hooks/usePackages';
 import styles from '../components/TabBar.module.css';
 import SimpleLocation from '../components/SimpleLocation';
 
 
 export default function Home() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const { packages, loading, error, refetch } = usePackages();
+
+  // 获取热门套餐（按销量排序，取前6个）
+  const popularPackages = packages
+    .sort((a, b) => b.salesCount - a.salesCount)
+    .slice(0, 6);
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // 轮播图数据
@@ -106,46 +116,6 @@ export default function Home() {
             />
           ))}
         </div>
-
-        {/* 左右箭头 */}
-        <button
-          onClick={goToPrevSlide}
-          style={{
-            position: 'absolute',
-            left: '10px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            background: 'rgba(0,0,0,0.3)',
-            border: 'none',
-            color: 'white',
-            width: '30px',
-            height: '30px',
-            borderRadius: '50%',
-            cursor: 'pointer',
-            fontSize: '16px'
-          }}
-        >
-          ‹
-        </button>
-        <button
-          onClick={goToNextSlide}
-          style={{
-            position: 'absolute',
-            right: '10px',
-            top: '50%',
-            transform: 'translateY(-50%)',
-            background: 'rgba(0,0,0,0.3)',
-            border: 'none',
-            color: 'white',
-            width: '30px',
-            height: '30px',
-            borderRadius: '50%',
-            cursor: 'pointer',
-            fontSize: '16px'
-          }}
-        >
-          ›
-        </button>
       </div>
 
       {/* 使用简化的定位组件，启用自动定位 */}
@@ -192,6 +162,46 @@ export default function Home() {
               </span>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Quick Links */}
+      <div style={{ padding: '0 20px 20px' }}>
+        <h2 style={{ margin: '0 0 15px', fontSize: '20px', fontWeight: 'bold' }}>快速链接</h2>
+        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+          <Link href="/database-admin" style={{
+            background: '#8b5cf6',
+            color: 'white',
+            padding: '8px 16px',
+            borderRadius: '20px',
+            textDecoration: 'none',
+            fontSize: '14px',
+            fontWeight: '500'
+          }}>
+            数据库管理
+          </Link>
+          <Link href="/service" style={{
+            background: '#10b981',
+            color: 'white',
+            padding: '8px 16px',
+            borderRadius: '20px',
+            textDecoration: 'none',
+            fontSize: '14px',
+            fontWeight: '500'
+          }}>
+            全部服务
+          </Link>
+          <Link href="/favorites" style={{
+            background: '#f59e0b',
+            color: 'white',
+            padding: '8px 16px',
+            borderRadius: '20px',
+            textDecoration: 'none',
+            fontSize: '14px',
+            fontWeight: '500'
+          }}>
+            我的收藏
+          </Link>
         </div>
       </div>
 
