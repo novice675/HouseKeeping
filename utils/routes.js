@@ -4,8 +4,13 @@ export const routes = {
   SERVICE: '/service',
   MESSAGE: '/message',
   PROFILE: '/profile',
+<<<<<<< HEAD
   FIRST_POST: '/posts/first-post',
   YJL: '/YJL',
+=======
+  FAVORITES: '/favorites',
+  FIRST_POST: '/posts/first-post'
+>>>>>>> 58d0980d5a56ccfa37a409dd474506e952017e53
 };
 
 // TabBar 导航配置
@@ -55,5 +60,6 @@ export const pageTitles = {
   [routes.SERVICE]: '服务',
   [routes.MESSAGE]: '消息',
   [routes.PROFILE]: '我的',
+  [routes.FAVORITES]: '收藏',
   [routes.FIRST_POST]: '第一篇文章'
 }; 
